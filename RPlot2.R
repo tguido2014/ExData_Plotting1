@@ -1,13 +1,13 @@
 #Read data
-filename <- "household_power_consumption.txt"
-DF <- read.table(filename, header=TRUE, sep=";", colClasses = "character")
+hpcData <- "household_power_consumption.txt"
+HPC <- read.table(hpcData, header=TRUE, sep=";", colClasses = "character")
     
 # Set required date range
 beforeDate <- as.Date("2007/02/01", "%Y/%m/%d")
 afterDate <- as.Date("2007/02/02", "%Y/%m/%d")
 
 # retrieve required subset
-data <- subset(DF, as.Date(DF[,1], "%d/%m/%Y") >= beforeDate & as.Date(DF[,1], "%d/%m/%Y") <= afterDate)
+data <- subset(HPC, as.Date(HPC[,1], "%d/%m/%Y") >= beforeDate & as.Date(HPC[,1], "%d/%m/%Y") <= afterDate)
 #-------------------------------------
 # concatenate date and time values and convert to date type
 tempDateTime <- paste(data[,1], data[,2], sep = ",")

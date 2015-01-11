@@ -1,6 +1,6 @@
 #Read data
-filename <- "household_power_consumption.txt"
-DF <- read.table(filename, header=TRUE, sep=";", colClasses = "character")
+hpcData <- "household_power_consumption.txt"
+DF <- read.table(hpcData, header=TRUE, sep=";", colClasses = "character")
     
 # Set required date range
 beforeDate <- as.Date("2007/02/01", "%Y/%m/%d")
