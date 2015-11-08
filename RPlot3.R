@@ -14,7 +14,7 @@ tempDateTime <- paste(data[,1], data[,2], sep = ",")
 tempDateTime <- strptime(tempDateTime, format="%d/%m/%Y,%H:%M:%S")
     
 # Create line chart and save as png
-png(data = "plot3.png", width = 480, height = 480 )
+png("plot3.png", width = 480, height = 480 )
 #----------------------------------------------------
 
 # plots Date & Time (X) vs Sub metering 1, 2 and 3 (Y)
@@ -35,4 +35,3 @@ lines(tempDateTime, as.numeric(data[,7]), type = "l")
 lines(tempDateTime, as.numeric(data[,8]), type = "l", col = "red")
 lines(tempDateTime, as.numeric(data[,9]), type = "l", col = "blue")
 legend("topright", col = c("black", "red", "blue"), legend = c(names(data[7]),names(data[8]),names(data[9])), lty = c(1,1))
-    

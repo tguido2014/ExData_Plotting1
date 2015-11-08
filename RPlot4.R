@@ -14,7 +14,7 @@ tempDateTime <- paste(data[,1], data[,2], sep = ",")
 tempDateTime <- strptime(tempDateTime, format="%d/%m/%Y,%H:%M:%S")
     
 # Create line chart and save as png
-png(data = "plot4.png", width = 480, height = 480 )
+png("plot4.png", width = 480, height = 480 )
 #----------------------------------------------------
 
 # setting to draw 4 graphs in 2 by 2 format and ordered by plots 1 and 2
@@ -61,4 +61,4 @@ lines(tempDateTime, as.numeric(data[,9]), type = "l", col = "blue")
 legend("topright", col = c("black", "red", "blue"), legend = c(names(data[7]),names(data[8]),names(data[9])), lty = c(1,1), bty = "n")
     
 plot(tempDateTime, as.numeric(data[,4]), type = "n", ylab = names(data[4]), xlab = "datetime")
-lines(tempDateTime, as.numeric(data[,4]), type = "l")    
+lines(tempDateTime, as.numeric(data[,4]), type = "l")
